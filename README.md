@@ -18,4 +18,4 @@ In this section, I simulated multiple monitoring alerts and incidents in Zabbix 
 - Windows 11 x64
 
 
-<h2>Setting up Items and Triggers</h2>
+<h2>Testing Simulated Incidents</h2>
