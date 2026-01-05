@@ -51,8 +51,17 @@ This test confirmed that triggers were correctly configured to detect service ou
 </p>
 <p>
 Now, to simulate a host outage, I stopped the VM Host-1. </p>
-Notice instead of the error message saying connection refused, it says no route to host. Instead of the agent misbehaving like in the last incident, the host is actually offline which indicates the host is completely unreachable. </p>
-This could be a network issue, or the computer is just simply turned off.
+Notice instead of the error message saying connection refused, it says no route to host. Instead of the agent misbehaving like it did in the last incident, the host is actually offline which indicates the host is completely unreachable. </p>
+It also triggered the alert which was `NODATA 60 seconds` meaning it tried pinging Host-1 but it didnt get a response back. </p>
+This could be a network issue, or it's just that the the computer is just simply turned off.
+</p>
+<br />
+
+<p>
+<img width="1500" alt="image" src="https://github.com/user-attachments/assets/011477ca-c4d0-48dd-b64e-cbc6da17f384" /> <img width="1500" alt="image" src="https://github.com/user-attachments/assets/6f335ebb-f9a5-4a64-a2b2-d88adb6fa950" />
+</p>
+<p>
+If i tried pinging it, it won't 
 </p>
 <br />
 
