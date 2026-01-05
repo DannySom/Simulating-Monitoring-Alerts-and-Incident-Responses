@@ -58,23 +58,34 @@ kuik
 <img width="1732" height="429" alt="image" src="https://github.com/user-attachments/assets/9789787e-b780-4a23-9913-1cbda205f760" />
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Trigger
+</p>
+<br />
+
+
+<p>
+<img width="589" height="81" alt="image" src="https://github.com/user-attachments/assets/6d1d8deb-adcf-44b7-8883-2a64e420faca" />
+<img width="600" alt="Screenshot 2026-01-04 232807" src="https://github.com/user-attachments/assets/e5f09a39-ef89-4c95-8c5d-d5acff4bb4e6" />
+</p>
+<p>
+It trigg
+</p>
+<br />
+
+
+<p>
+<img width="1729" height="417" alt="Screenshot 2026-01-04 233357" src="https://github.com/user-attachments/assets/76c0c7f8-120f-476a-b962-5744e9448c10" />
+</p>
+<p>
+CPU
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="600" alt="Screenshot 2026-01-04 232807" src="https://github.com/user-attachments/assets/e5f09a39-ef89-4c95-8c5d-d5acff4bb4e6" />
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Triggered
 </p>
 <br />
 
