@@ -18,7 +18,7 @@ In this section, I simulated multiple monitoring alerts and incidents in Zabbix 
 - Windows 11 x64
 
 
-<h2>Testing Simulated Incidents</h2>
+<h2>Simulating Agent Unreachable</h2>
 
 <p>
 <img width="400" height="115" alt="image" src="https://github.com/user-attachments/assets/db69814c-5291-459a-95d9-a4c29ea822a3" /> <img width="450" alt="image" src="https://github.com/user-attachments/assets/39e292ce-f896-471b-8883-21b9bb6e4a93" /> <img width="400" alt="Screenshot 2026-01-04 200915" src="https://github.com/user-attachments/assets/4f46f8b1-e53a-4c47-b7e4-9c8344882838" />
@@ -46,12 +46,14 @@ This test confirmed that triggers were correctly configured to detect service ou
 </p>
 <br />
 
+<h2>Simulating Host is Down</h2>
+
 <p>
 <img width="1500" alt="image" src="https://github.com/user-attachments/assets/011477ca-c4d0-48dd-b64e-cbc6da17f384" /> <img width="1500" alt="image" src="https://github.com/user-attachments/assets/6f335ebb-f9a5-4a64-a2b2-d88adb6fa950" />
 </p>
 <p>
 Now, to simulate a host outage, I stopped the VM Host-1. </p>
-Notice instead of the error message saying connection refused, it says no route to host. Instead of the agent misbehaving like it did in the last incident, the host is actually offline which indicates the host is completely unreachable. </p>
+Notice instead of the error message saying connection refused, it reported "no route to host". Instead of the agent misbehaving like it did in the last incident, the host is actually offline which indicates the host is completely unreachable. </p>
 It also triggered the alert which was `NODATA 60 seconds` meaning it tried pinging Host-1 but it didnt get a response back. </p>
 This could be a network issue, or it's just that the the computer is just simply turned off.
 </p>
@@ -61,7 +63,9 @@ This could be a network issue, or it's just that the the computer is just simply
 <img width="1500" alt="image" src="https://github.com/user-attachments/assets/011477ca-c4d0-48dd-b64e-cbc6da17f384" /> <img width="1500" alt="image" src="https://github.com/user-attachments/assets/6f335ebb-f9a5-4a64-a2b2-d88adb6fa950" />
 </p>
 <p>
-If i tried pinging it, it won't 
+Then I'll try pinging Host-1 myself from Zabbix Server. </p>
+After a couple of seconds, ping returned no response, confirming that the host availability alert was correctly triggered. </p>
+To resolve this, I restarted the VM Host-1, waited for the agent to reconnect, confirmed the alert cleared, and verified normal operation in the dashboards.
 </p>
 <br />
 
