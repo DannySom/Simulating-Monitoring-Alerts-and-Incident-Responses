@@ -77,6 +77,7 @@ Trigger
 </p>
 <br />
 
+<h2>Simulating High CPU Usage</h2>
 
 <p>
 <img width="589" height="81" alt="image" src="https://github.com/user-attachments/assets/6d1d8deb-adcf-44b7-8883-2a64e420faca" />
