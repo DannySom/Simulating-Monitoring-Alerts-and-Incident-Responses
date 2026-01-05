@@ -50,7 +50,9 @@ This test confirmed that triggers were correctly configured to detect service ou
 <img width="1500" alt="image" src="https://github.com/user-attachments/assets/011477ca-c4d0-48dd-b64e-cbc6da17f384" /> <img width="1500" alt="image" src="https://github.com/user-attachments/assets/6f335ebb-f9a5-4a64-a2b2-d88adb6fa950" />
 </p>
 <p>
-kuik
+Now, to simulate a host outage, I stopped the VM Host-1. </p>
+Notice instead of the error message saying connection refused, it says no route to host. Instead of the agent misbehaving like in the last incident, the host is actually offline which indicates the host is completely unreachable. </p>
+This could be a network issue, or the computer is just simply turned off.
 </p>
 <br />
 
