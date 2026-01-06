@@ -52,7 +52,8 @@ This test confirmed that triggers were correctly configured to detect service ou
 <img width="1500" alt="image" src="https://github.com/user-attachments/assets/011477ca-c4d0-48dd-b64e-cbc6da17f384" /> <img width="1500" alt="image" src="https://github.com/user-attachments/assets/6f335ebb-f9a5-4a64-a2b2-d88adb6fa950" />
 </p>
 <p>
-Now, to simulate a host outage, I stopped the VM Host-1. </p>
+Now, to simulate a host outage. </p>
+To do this, I stopped the VM Host-1 by turning the VM off in Digital Ocean.
 Notice instead of the error message saying connection refused, it reported "no route to host". Instead of the agent misbehaving like it did in the last incident, the host is actually offline which indicates the host is completely unreachable. </p>
 It also triggered the alert which was `NODATA 60 seconds` meaning it tried pinging Host-1 but it didnt get a response back. </p>
 This could be a network issue, or it's just that the the computer is just simply turned off.
@@ -60,7 +61,7 @@ This could be a network issue, or it's just that the the computer is just simply
 <br />
 
 <p>
-<img width="1500" alt="image" src="https://github.com/user-attachments/assets/011477ca-c4d0-48dd-b64e-cbc6da17f384" /> <img width="1500" alt="image" src="https://github.com/user-attachments/assets/6f335ebb-f9a5-4a64-a2b2-d88adb6fa950" />
+<img width="600" alt="Screenshot 2026-01-05 010228" src="https://github.com/user-attachments/assets/558957c5-e8fd-4ce2-b6ae-017392cfc891" />
 </p>
 <p>
 Then I'll try pinging Host-1 myself from Zabbix Server. </p>
@@ -69,13 +70,7 @@ To resolve this, I restarted the VM Host-1, waited for the agent to reconnect, c
 </p>
 <br />
 
-<p>
-<img width="1732" height="429" alt="image" src="https://github.com/user-attachments/assets/9789787e-b780-4a23-9913-1cbda205f760" />
-</p>
-<p>
-Trigger
-</p>
-<br />
+
 
 <h2>Simulating High CPU Usage</h2>
 
@@ -111,9 +106,11 @@ In the CPU utilization graph, we can see that CPU usage spikes to ~100% at 05:19
 
 
 <p>
-<img width="656" height="410" alt="image" src="https://github.com/user-attachments/assets/77c97c6e-1e0d-4177-bc7e-3d727acbc8e3" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/77c97c6e-1e0d-4177-bc7e-3d727acbc8e3" />
 </p>
 <p>
+
+I ran `stress --cpu 1 --timeout 600` again but this time, I will try to figure out how to resolve the issue by determining what is causing the high CPU usage instead of waiting for the timer to run out. </p> 
 
 To identify the process causing high CPU utilization, I ran `top` on the host VM. This allowed me to see which process was consuming the most CPU resources in real time.
 
@@ -127,37 +124,14 @@ Here, we can see that the `stress` process is consuming approximately 99.7% of C
 
 
 <p>
-<img width="654" height="411" alt="image" src="https://github.com/user-attachments/assets/58daae64-4f05-4509-97da-e26ca7c10dd6" /> <img width="647" height="413" alt="image" src="https://github.com/user-attachments/assets/698a4532-c20e-4876-8b32-b7158ea39cbf" />
-
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/58daae64-4f05-4509-97da-e26ca7c10dd6" /> <img width="500" alt="image" src="https://github.com/user-attachments/assets/698a4532-c20e-4876-8b32-b7158ea39cbf" />
 </p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+To stop the process, type `k` (for kill) while in top. This will prompt `PID to kill: ` where you enter the PID of the process you want to terminate, which is `1038`. Next, it will ask for a signal number; pressing Enter accepts the default 15 (SIGTERM), which then stops the process. 
+
+</p> After killing the process, CPU usage graph returns to normal, confirming that the stress process was the cause of the high CPU utilization.
+
 </p>
 <br />
 
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
-
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
